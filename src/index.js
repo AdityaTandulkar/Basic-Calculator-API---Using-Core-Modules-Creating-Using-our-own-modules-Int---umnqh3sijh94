@@ -105,7 +105,7 @@ app.post("/sub", (req, res) => {
         res.send({
             status : "success",
             message : "the difference of given two numbers",
-            sum : result
+            difference : result
         })
     }
 });
