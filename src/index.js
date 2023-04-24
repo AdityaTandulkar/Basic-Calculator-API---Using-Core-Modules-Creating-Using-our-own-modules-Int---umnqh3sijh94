@@ -131,7 +131,7 @@ app.post("/multiply", (req, res) => {
     else{
         res.send({
             status : "success",
-            message : "the product of given numbers",
+            message : "The product of given numbers",
             sum : result
         })
     }
@@ -164,7 +164,7 @@ app.post("/divide", (req, res) => {
     else{
         res.send({
             status : "success",
-            message : "the division of given numbers",
+            message : "The division of given numbers",
             sum : result
         })
     }
