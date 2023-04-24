@@ -28,19 +28,19 @@ app.use(bodyParser.json());
 app.use((req, res, next) => {
     const {num1, num2} = req.body;
     if(typeof num1 === "string" || typeof num2 === "string"){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Invalid data types"
         });
     }
     else if(isOverflow(num1) || isOverflow(num2)){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Overflow"
         });
     }
     else if(isUnderflow(num1) || isUnderflow(num2)){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Underflow"
         })
@@ -63,13 +63,13 @@ app.post("/add", (req, res) => {
     const result = num1 + num2;
 
     if(isUnderflow(result)){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Underflow"
         })
     }
     else if(isOverflow(result)){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Overflow"
         })
@@ -90,13 +90,13 @@ app.post("/sub", (req, res) => {
     const result = num1 - num2;
 
     if(isUnderflow(result)){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Underflow"
         })
     }
     else if(isOverflow(result)){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Overflow"
         })
@@ -117,13 +117,13 @@ app.post("/multiply", (req, res) => {
     const result = num1 * num2;
 
     if(isUnderflow(result)){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Underflow"
         })
     }
     else if(isOverflow(result)){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Overflow"
         })
@@ -144,19 +144,19 @@ app.post("/divide", (req, res) => {
     const result = num1 / num2;
 
     if(num2 === 0){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Cannot divide by zero"
         })
     }
     else if(isUnderflow(result)){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Underflow"
         })
     }
     else if(isOverflow(result)){
-        res.status(400).send({
+        res.send({
             status : "error",
             message : "Overflow"
         })
